@@ -10,3 +10,4 @@ venv
 massif.out.*
 
 __pycache__
+*.egg-info
