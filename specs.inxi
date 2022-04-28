@@ -1,0 +1,215 @@
+System:
+  Kernel: 5.13.0-37-generic x86_64 bits: 64 compiler: N/A 
+  parameters: BOOT_IMAGE=/@/boot/vmlinuz-5.13.0-37-generic 
+  root=UUID=4b08d9d7-9ad0-4036-b964-208d6ae91032 ro rootflags=subvol=@ quiet 
+  splash 
+  Desktop: Cinnamon 5.0.7 wm: muffin 5.0.2 dm: LightDM 1.30.0 
+  Distro: Linux Mint 20.2 Uma base: Ubuntu 20.04 focal 
+Machine:
+  Type: Laptop System: Razer 
+  product: Blade 15 Advanced Model (Early 2020) - RZ09-033 v: 5.04 
+  serial: <filter> Chassis: type: 10 serial: <filter> 
+  Mobo: Razer model: CH551 v: 4 serial: <filter> UEFI: Razer v: 1.01 
+  date: 04/16/2020 
+Battery:
+  ID-1: BAT0 charge: 81.3 Wh condition: 81.3/80.2 Wh (101%) volts: 15.8/15.4 
+  model: Razer Blade type: Unknown serial: <filter> status: Full 
+  Device-1: hidpp_battery_23 model: Logitech Wireless Mouse MX Master 3 
+  serial: <filter> charge: 55% (should be ignored) rechargeable: yes 
+  status: Discharging 
+Memory:
+  RAM: total: 15.53 GiB used: 11.89 GiB (76.6%) 
+  RAM Report: permissions: Unable to run dmidecode. Root privileges required. 
+CPU:
+  Topology: 8-Core model: Intel Core i7-10875H bits: 64 type: MT MCP arch: N/A 
+  family: 6 model-id: A5 (165) stepping: 2 microcode: EA L2 cache: 16.0 MiB 
+  bogomips: 73598 
+  Speed: 4084 MHz min/max: 800/5100 MHz Core speeds (MHz): 1: 4034 2: 3750 
+  3: 3989 4: 3809 5: 3881 6: 3897 7: 3776 8: 967 9: 2679 10: 1270 11: 2852 
+  12: 4201 13: 4475 14: 4330 15: 3172 16: 2983 
+  Flags: 3dnowprefetch abm acpi adx aes aperfmperf apic arat arch_capabilities 
+  arch_perfmon art avx avx2 bmi1 bmi2 bts clflush clflushopt cmov constant_tsc 
+  cpuid cpuid_fault cx16 cx8 de ds_cpl dtes64 dtherm dts epb ept ept_ad erms 
+  est f16c flexpriority flush_l1d fma fpu fsgsbase fxsr ht hwp hwp_act_window 
+  hwp_epp hwp_notify ibpb ibrs ibrs_enhanced ida intel_pt invpcid 
+  invpcid_single lahf_lm lm mca mce md_clear mmx monitor movbe mpx msr mtrr 
+  nonstop_tsc nopl nx ospke pae pat pbe pcid pclmulqdq pdcm pdpe1gb pebs pge 
+  pku pln pni popcnt pse pse36 pts rdrand rdseed rdtscp rep_good sdbg sep smap 
+  smep smx ss ssbd sse sse2 sse4_1 sse4_2 ssse3 stibp syscall tm tm2 
+  tpr_shadow tsc tsc_adjust tsc_deadline_timer vme vmx vnmi vpid x2apic 
+  xgetbv1 xsave xsavec xsaveopt xsaves xtopology xtpr 
+  Vulnerabilities: Type: itlb_multihit status: KVM: VMX disabled 
+  Type: l1tf status: Not affected 
+  Type: mds status: Not affected 
+  Type: meltdown status: Not affected 
+  Type: spec_store_bypass 
+  mitigation: Speculative Store Bypass disabled via prctl and seccomp 
+  Type: spectre_v1 
+  mitigation: usercopy/swapgs barriers and __user pointer sanitization 
+  Type: spectre_v2 mitigation: Enhanced IBRS, IBPB: conditional, RSB filling 
+  Type: srbds status: Not affected 
+  Type: tsx_async_abort status: Not affected 
+Graphics:
+  Device-1: NVIDIA vendor: Razer USA driver: nvidia v: 510.47.03 
+  bus ID: 01:00.0 chip ID: 10de:1e93 
+  Display: x11 server: X.Org 1.20.13 driver: nvidia 
+  resolution: 1920x1080~60Hz, 1920x1080~240Hz 
+  OpenGL: renderer: llvmpipe (LLVM 12.0.0 256 bits) v: 4.5 Mesa 21.2.6 
+  compat-v: 3.1 direct render: Yes 
+Audio:
+  Device-1: Intel Comet Lake PCH cAVS vendor: Razer USA driver: snd_hda_intel 
+  v: kernel bus ID: 00:1f.3 chip ID: 8086:06c8 
+  Device-2: NVIDIA TU104 HD Audio vendor: Razer USA driver: snd_hda_intel 
+  v: kernel bus ID: 01:00.1 chip ID: 10de:10f8 
+  Sound Server: ALSA v: k5.13.0-37-generic 
+Network:
+  Device-1: Intel Wi-Fi 6 AX201 driver: iwlwifi v: kernel bus ID: 00:14.3 
+  chip ID: 8086:06f0 
+  IF: wlo1 state: up mac: <filter> 
+  IP v4: <filter> type: dynamic noprefixroute scope: global 
+  broadcast: <filter> 
+  IF-ID-1: gpd0 state: down mac: N/A 
+  IF-ID-2: tun0 state: unknown speed: 10 Mbps duplex: full mac: N/A 
+  IP v4: <filter> scope: global 
+  WAN IP: <filter> 
+Drives:
+  Local Storage: total: 953.87 GiB used: 313.23 GiB (32.8%) 
+  SMART Message: Required tool smartctl not installed. Check --recommends 
+  ID-1: /dev/nvme0n1 vendor: LITE-ON model: CA5-8D1024 size: 953.87 GiB 
+  block size: physical: 512 B logical: 512 B speed: 31.6 Gb/s lanes: 4 
+  serial: <filter> rev: CQA0901 scheme: GPT 
+  Message: No Optical or Floppy data was found. 
+RAID:
+  Message: No RAID data was found. 
+Partition:
+  ID-1: / raw size: 46.57 GiB size: 102.45 GiB (220.00%) 
+  used: 53.92 GiB (52.6%) fs: btrfs dev: /dev/nvme0n1p9 label: N/A 
+  uuid: 4b08d9d7-9ad0-4036-b964-208d6ae91032 
+  ID-2: /boot/efi raw size: 100.0 MiB size: 96.0 MiB (96.00%) 
+  used: 30.2 MiB (31.5%) fs: vfat dev: /dev/nvme0n1p2 label: SYSTEM 
+  uuid: 0EA5-BB51 
+  ID-3: /home raw size: 139.70 GiB size: 383.24 GiB (274.34%) 
+  used: 246.31 GiB (64.3%) fs: btrfs dev: /dev/nvme0n1p8 label: N/A 
+  uuid: 933a0fe4-8eaa-4cd1-82d1-e723b7872a8d 
+  ID-4: /run/timeshift/backup raw size: 46.57 GiB size: 102.45 GiB (220.00%) 
+  used: 53.92 GiB (52.6%) fs: btrfs dev: /dev/nvme0n1p9 label: N/A 
+  uuid: 4b08d9d7-9ad0-4036-b964-208d6ae91032 
+  ID-5: /snap/anbox/186 raw size: 373.8 MiB size: <superuser/root required> 
+  used: <superuser/root required> fs: squashfs dev: /dev/loop0 label: N/A 
+  uuid: N/A 
+  ID-6: /snap/authy/8 raw size: 64.6 MiB size: <superuser/root required> 
+  used: <superuser/root required> fs: squashfs dev: /dev/loop1 label: N/A 
+  uuid: N/A 
+  ID-7: /snap/authy/9 raw size: 64.6 MiB size: <superuser/root required> 
+  used: <superuser/root required> fs: squashfs dev: /dev/loop6 label: N/A 
+  uuid: N/A 
+  ID-8: /snap/bare/5 raw size: 4 KiB size: <superuser/root required> 
+  used: <superuser/root required> fs: squashfs dev: /dev/loop15 label: N/A 
+  uuid: N/A 
+  ID-9: /snap/blender/2090 raw size: 215.4 MiB size: <superuser/root required> 
+  used: <superuser/root required> fs: squashfs dev: /dev/loop11 label: N/A 
+  uuid: N/A 
+  ID-10: /snap/blender/2106 raw size: 215.4 MiB 
+  size: <superuser/root required> used: <superuser/root required> fs: squashfs 
+  dev: /dev/loop14 label: N/A uuid: N/A 
+  ID-11: /snap/core/12834 raw size: 110.6 MiB size: <superuser/root required> 
+  used: <superuser/root required> fs: squashfs dev: /dev/loop7 label: N/A 
+  uuid: N/A 
+  ID-12: /snap/core/12941 raw size: 111.6 MiB size: <superuser/root required> 
+  used: <superuser/root required> fs: squashfs dev: /dev/loop2 label: N/A 
+  uuid: N/A 
+  ID-13: /snap/core18/2284 raw size: 55.5 MiB size: <superuser/root required> 
+  used: <superuser/root required> fs: squashfs dev: /dev/loop4 label: N/A 
+  uuid: N/A 
+  ID-14: /snap/core18/2344 raw size: 55.5 MiB size: <superuser/root required> 
+  used: <superuser/root required> fs: squashfs dev: /dev/loop19 label: N/A 
+  uuid: N/A 
+  ID-15: /snap/gnome-3-28-1804/145 raw size: 162.9 MiB 
+  size: <superuser/root required> used: <superuser/root required> fs: squashfs 
+  dev: /dev/loop9 label: N/A uuid: N/A 
+  ID-16: /snap/gnome-3-28-1804/161 raw size: 164.8 MiB 
+  size: <superuser/root required> used: <superuser/root required> fs: squashfs 
+  dev: /dev/loop5 label: N/A uuid: N/A 
+  ID-17: /snap/gnome-3-34-1804/77 raw size: 219.0 MiB 
+  size: <superuser/root required> used: <superuser/root required> fs: squashfs 
+  dev: /dev/loop16 label: N/A uuid: N/A 
+  ID-18: /snap/gtk-common-themes/1515 raw size: 65.1 MiB 
+  size: <superuser/root required> used: <superuser/root required> fs: squashfs 
+  dev: /dev/loop13 label: N/A uuid: N/A 
+  ID-19: /snap/gtk-common-themes/1519 raw size: 65.2 MiB 
+  size: <superuser/root required> used: <superuser/root required> fs: squashfs 
+  dev: /dev/loop12 label: N/A uuid: N/A 
+  ID-20: /snap/hello-world/29 raw size: 20 KiB size: <superuser/root required> 
+  used: <superuser/root required> fs: squashfs dev: /dev/loop3 label: N/A 
+  uuid: N/A 
+  ID-21: /snap/nordpass/130 raw size: 75.2 MiB size: <superuser/root required> 
+  used: <superuser/root required> fs: squashfs dev: /dev/loop20 label: N/A 
+  uuid: N/A 
+  ID-22: /snap/nordpass/131 raw size: 76.5 MiB size: <superuser/root required> 
+  used: <superuser/root required> fs: squashfs dev: /dev/loop18 label: N/A 
+  uuid: N/A 
+  ID-23: /snap/slack/60 raw size: 94.9 MiB size: <superuser/root required> 
+  used: <superuser/root required> fs: squashfs dev: /dev/loop21 label: N/A 
+  uuid: N/A 
+  ID-24: /snap/slack/61 raw size: 103.1 MiB size: <superuser/root required> 
+  used: <superuser/root required> fs: squashfs dev: /dev/loop17 label: N/A 
+  uuid: N/A 
+  ID-25: /snap/spotify/58 raw size: 169.6 MiB size: <superuser/root required> 
+  used: <superuser/root required> fs: squashfs dev: /dev/loop10 label: N/A 
+  uuid: N/A 
+  ID-26: /snap/spotify/60 raw size: 169.4 MiB size: <superuser/root required> 
+  used: <superuser/root required> fs: squashfs dev: /dev/loop23 label: N/A 
+  uuid: N/A 
+  ID-27: /tmp raw size: 46.57 GiB size: 45.58 GiB (97.89%) 
+  used: 405.9 MiB (0.9%) fs: ext4 dev: /dev/nvme0n1p7 label: N/A 
+  uuid: a27a7500-ed82-4d93-ad1d-1525b9dcf578 
+  ID-28: swap-1 size: 29.80 GiB used: 12.57 GiB (42.2%) fs: swap 
+  swappiness: 60 (default) cache pressure: 100 (default) dev: /dev/nvme0n1p12 
+  label: swap1 uuid: 5ee4d08d-45a6-4399-99c0-017ee9a7528e 
+Unmounted:
+  ID-1: /dev/nvme0n1p1 size: 100.0 MiB fs: ntfs label: RazerRecPar 
+  uuid: 2484A35584A3286E 
+  ID-2: /dev/nvme0n1p10 size: 1000.0 MiB fs: ntfs label: Winre 
+  uuid: FC30B63B30B5FCA8 
+  ID-3: /dev/nvme0n1p11 size: 103.85 GiB fs: btrfs label: N/A 
+  uuid: 933a0fe4-8eaa-4cd1-82d1-e723b7872a8d 
+  ID-4: /dev/nvme0n1p3 size: 16.0 MiB fs: <superuser/root required> label: N/A 
+  uuid: N/A 
+  ID-5: /dev/nvme0n1p4 size: 390.62 GiB fs: ntfs label: Windows-primary 
+  uuid: 8C5CB5AB5CB59086 
+  ID-6: /dev/nvme0n1p5 size: 55.88 GiB fs: btrfs label: N/A 
+  uuid: 4b08d9d7-9ad0-4036-b964-208d6ae91032 
+  ID-7: /dev/nvme0n1p6 size: 139.70 GiB fs: btrfs label: N/A 
+  uuid: 933a0fe4-8eaa-4cd1-82d1-e723b7872a8d 
+USB:
+  Hub: 1-0:1 info: Full speed (or root) Hub ports: 16 rev: 2.0 speed: 480 Mb/s 
+  chip ID: 1d6b:0002 
+  Device-1: 1-1:2 
+  info: Corsair CORSAIR K95 RGB PLATINUM XT Mechanical Gaming Keyboard 
+  type: Keyboard,HID,Mouse driver: hid-generic,usbhid interfaces: 4 rev: 2.0 
+  speed: 12 Mb/s chip ID: 1b1c:1b89 serial: <filter> 
+  Device-2: 1-7:3 info: IMC Networks Integrated Camera type: Video 
+  driver: uvcvideo interfaces: 4 rev: 2.0 speed: 480 Mb/s chip ID: 13d3:56d5 
+  serial: <filter> 
+  Device-3: 1-8:4 info: Razer USA Razer Blade type: Keyboard,Mouse 
+  driver: hid-generic,usbhid interfaces: 3 rev: 2.0 speed: 12 Mb/s 
+  chip ID: 1532:0253 
+  Device-4: 1-14:5 info: Intel type: Bluetooth driver: btusb interfaces: 2 
+  rev: 2.0 speed: 12 Mb/s chip ID: 8087:0026 
+  Hub: 2-0:1 info: Full speed (or root) Hub ports: 8 rev: 3.1 speed: 10 Gb/s 
+  chip ID: 1d6b:0003 
+  Hub: 3-0:1 info: Full speed (or root) Hub ports: 2 rev: 2.0 speed: 480 Mb/s 
+  chip ID: 1d6b:0002 
+  Hub: 4-0:1 info: Full speed (or root) Hub ports: 4 rev: 3.1 speed: 10 Gb/s 
+  chip ID: 1d6b:0003 
+  Hub: 5-0:1 info: Full speed (or root) Hub ports: 2 rev: 2.0 speed: 480 Mb/s 
+  chip ID: 1d6b:0002 
+  Hub: 6-0:1 info: Full speed (or root) Hub ports: 2 rev: 3.1 speed: 10 Gb/s 
+  chip ID: 1d6b:0003 
+Sensors:
+  System Temperatures: cpu: 62.0 C mobo: N/A gpu: nvidia temp: 63 C 
+  Fan Speeds (RPM): N/A 
+Info:
+  Processes: 693 Uptime: 6d 12h 09m Init: systemd v: 245 runlevel: 5 
+  Compilers: gcc: 9.4.0 alt: 8/9 Shell: bash v: 5.0.17 running in: server 
+  inxi: 3.0.38 

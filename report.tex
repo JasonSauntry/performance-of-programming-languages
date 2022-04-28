@@ -8,6 +8,8 @@
 \usepackage{enumerate}
 \usepackage{fancyhdr}
 \usepackage{mathrsfs}
+\usepackage{fancyvrb}
+\usepackage{color}
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{listings}
@@ -135,9 +137,13 @@ Performance was measured by the following metrics:
 I evaluated each language over a series of benchmarks, intended to represent a
 variety of general-purpose yet performance-intensive computing workloads.
 
-% TODO GitHub link
-The source code of all benchmarks are availaible on GitHub, along with
-instructions describing how to run them.
+The source code of all benchmarks are publically availaible on
+\href{https://github.com/JasonSauntry/performance-of-programming-languages}{GitHub},
+along with instructions describing how to run them.
+
+% TODO readme
+
+% TODO license
 
 \subsection{Choice of Benchmarks}
 
@@ -254,7 +260,7 @@ memory usage an invalid measurement.
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{./heap-plot.png}
-  \caption{Performance of cannonical matrix multiplication.}
+  \caption{Performance of a heap.}
   \label{plot-heap}
 \end{figure}
 
@@ -269,11 +275,7 @@ runtime was very poor.
 Java's performance\footnote{Java's results for this benchmark are different
 that what I presented in class on April 22, 2022. I noticed a bug after the
 presentation where the Java implementation skipped all the computation.} was
-interesting: the runtime of the sort was so low that it rounded to zero. I am
-dubious of the validity of this result, but as far as I can tell it's
-legitimate. The runtime is measured using the same function as
-
-% TODO
+unremarkable. Like previously, it is roughly comparable to C.
 
 \subsection{Standard Library Sorting}\label{sort}
 
@@ -309,7 +311,7 @@ was impossibly good. This is discussed in~\ref{java-mem}.
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{./matmul_optimized-plot.png}
-  \caption{Performance of sorting via standard library functions.}
+  \caption{Performance of optimized matrix multiplication.}
   \label{plot-matmul-opt}
 \end{figure}
 
@@ -478,13 +480,18 @@ specific, objective results of this project:
     portion of the codebase in C.
 \end{itemize}
 
+\appendix
 
+\section{Computer Specifications}
 
+These benchmarks can be run on any AMD-64 computer. Since runtimes are only
+compared to each other, running on different computers shouldn't meaningfully
+affect results. Additionally, since all benchmarks are single-threaded, the
+number of available cores shouldn't affect performance.
 
+However, the specifications of the test machine are listed below, collected
+using Inxi via \texttt{inxi --admin --verbosity=7 --filter}.
 
-
-
-
-% TODO specs
+\lstinputlisting[]{./specs.inxi}
 
 \end{document}

@@ -3,6 +3,10 @@ venv
 *.swp
 *.swo
 
+*.out
+*.log
+*.aux
+
 massif.out.*
 
 __pycache__
