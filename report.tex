@@ -19,6 +19,7 @@
 \usepackage{pgfplotstable}
 \usepackage{lipsum}
 \usepackage{url}
+\usepackage{float}
 \usepackage{hyperref}
 
 \hypersetup{%
@@ -96,11 +97,11 @@
 
 In 2020, I did a co-op at Purefacts Financial Solutions in our machine learning
 R\&D team. One problem we spent a lot of time talking about was the memory
-footprint of our algorithm, which was so big that in it's first test with a real
-client's data, \SI{64}{\giga\byte} of ram hadn't been enoguh, and the program
-didn't work. Because of this we spent a lot of time optimizing our code. And
-yet, the code was in Python, a language well-known for being rather inefficient.
-We made our program work, but I always wondered how much performance we lost by
+footprint of our algorithm, which was so big that in its first test with a real
+data set, \SI{64}{\giga\byte} of ram hadn't been enough and the program didn't
+work. Because of this we spent a lot of time optimizing our code. And yet the
+code was in Python, a language well-known for being rather inefficient.  We
+made our program work, but I always wondered how much performance we lost by
 our choice of programming language.
 
 The question I wanted to answer in my project is a generalization of the above:
@@ -132,9 +133,25 @@ Performance was measured by the following metrics:
   \item Peak memory usage
 \end{itemize}
 
+All source code used in this project is available on
+\href{https://github.com/JasonSauntry/performance-of-programming-languages}{GitHub}.
+
+Copyright © 2022 Jason H\. Sauntry \\
+All rights reserved.
+
+This document, along with the rest of this project, is licensed under the BSD
+3-clause license. A full text of the license in included in
+Appendix~\ref{license}.
+
+\clearpage
+
+\tableofcontents
+
+\clearpage
+
 \section{Testing Methodology}
 
-I evaluated each language over a series of benchmarks, intended to represent a
+I evaluated each language over a series of benchmarks intended to represent a
 variety of general-purpose yet performance-intensive computing workloads.
 
 The source code of all benchmarks are publically availaible on
@@ -208,8 +225,7 @@ floats, inserted each into the heap, then popped them all into a new list.
 
 There were two data points collected for exery benchmark: runtime and peak
 memory usage. Runtime was memasured directly by the language under test. Memory
-usage, on the other hand, was measured using
-\href{https://valgrind.org/}{Valgrind}'s Massif tool.
+usage was measured using \href{https://valgrind.org/}{Valgrind}'s Massif tool.
 
 In both cases benchmarks were managed—and data collected—using a Python
 script. Another Python script generated graphs for analysis.
@@ -218,7 +234,7 @@ script. Another Python script generated graphs for analysis.
 
 \subsection{Cannonical Matrix Multiplication}\label{matmul-cannonical}
 
-\begin{figure}[h!]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{./matmul_naïve-plot.png}
   \caption{Performance of cannonical matrix multiplication.}
@@ -250,14 +266,14 @@ Python was very slightly worse than C.
 
 Java on the other hand performed very well in runtime, with runtimes only
 doubling that of C on larger inputs. Java's limitation was in terms of memory,
-with performance \emph{considerable} worth than Python or C. This memory usage
+with performance \emph{considerably} worse than Python or C. This memory usage
 was an overhead. Java's marginal memory usage appears very good, but that is
 probably due to random variance in the memory overhead making the marginal
 memory usage an invalid measurement.
 
 \subsection{Heap}\label{heap}
 
-\begin{figure}[h!]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{./heap-plot.png}
   \caption{Performance of a heap.}
@@ -279,7 +295,7 @@ unremarkable. Like previously, it is roughly comparable to C.
 
 \subsection{Standard Library Sorting}\label{sort}
 
-\begin{figure}[h!]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{./sort_stdlib-plot.png}
   \caption{Performance of sorting via standard library functions.}
@@ -300,15 +316,17 @@ This is because Python's sort implementation is in-place\footnote{Per
 documentation}.}, whereas C's implementation may not be in-place\footnote{In
 the
 \href{https://www.gnu.org/software/libc/manual/html_node/Array-Sort-Function.html}{GNU
-specification}.} and thus may require additional heap space.
+specification}.} and thus require additional heap space.
 
 Java's runtime performance was similar to how the language behaved previously:
 worse than C, but not drastically so. It's memory performance on the other hand
-was impossibly good. This is discussed in~\ref{java-mem}.
+was impossibly good, better than the theoretical minimum size of an array of
+64-bit floats. This suggests that Valgrind may not accurately measure heap
+memory in Java programs.
 
 \subsection{Optimized Matrix Multiplication}\label{matmul-opt}
 
-\begin{figure}[h!]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{./matmul_optimized-plot.png}
   \caption{Performance of optimized matrix multiplication.}
@@ -324,11 +342,11 @@ Algebra System} library. As usual, C did reasonably well, but it was \emph{not}
 the fastest in all cases.
 
 Python used the popular Numpy library, although as discussed
-in~\ref{numpy-blas}, this isn't \emph{quite} correct. Impressively, Python's
-performance at the largest input size was slightly that C. It's marginal memory
-performance was also very good, almost exactly equal to that of C\footnote{This
-is why the Python line isn't visible on the marginal memory usage graph: The
-Python line is exactly underneath the C line.}.
+in~\ref{numpy-blas}, this isn't \emph{quite} a correct statement. Impressively,
+Python's performance at the largest input size was slightly better that C. It's
+marginal memory performance was also very good, almost exactly equal to that of
+C\footnote{This is why the Python line isn't visible on the marginal memory
+usage graph: The Python line is exactly underneath the C line.}.
 
 Java used the EJML linear algebra library. It's performance was unimpressive,
 with runtimes larger than C, but within the same order of magnitude.
@@ -341,10 +359,10 @@ Something that's very clear from~\ref{heap} Heap and~\ref{matmul-cannonical}
 Cannonical Matrix Multiplication is that Python code is really, \emph{really}
 slow.
 
-On a high level, the reasons for this is rather simple. C and Java are both
-ahead-of-time compiled languages: transformantion of textual code to
-computer-friently bytecode is done before runtime, by a compiler (either GCC or
-the Java Compiler). Python, on the other hand, is a JIT langauge, or
+On a high level, the reasons for this are rather simple. Firstly, C and Java
+are both ahead-of-time compiled languages: transformantion of textual code to
+computer-friently bytecode is done before runtime by a compiler, either GCC or
+the Java Compiler. Python, on the other hand, is a JIT langauge, or
 just-in-time compiled. Compilation is done \emph{at} runtime. This adds a time
 overhead.
 
@@ -396,7 +414,7 @@ probably \emph{is} a problem.
 
 As noted in~\ref{python-slow}, Python is rather painfully slow. Except,
 in~\ref{sort} Sorting\footnote{It also wasn't slow in~\ref{matmul-opt}. I'll
-address this in~\ref{python-c}.}, it isn't. Why? Because the sorting isn't done
+address this in~\ref{numpy-blas}.}, it isn't. Why? Because the sorting isn't done
 in Python code. It's done directly by the Python Interpreter. Or, to be more
 precise, it's done by the CPython interpreter, since CPython is the Python
 implementation under test. CPython is implemented in C. So Python's sorting is
@@ -414,7 +432,7 @@ So will a performance-intensive application run in a reasonable time in Python?
 It depends. If most of the computation happens within a standard library
 function, it might run quite quickly.
 
-\subsection{Why Python's Numpy is Fast}
+\subsection{Why Python's Numpy is Fast}\label{numpy-blas}
 
 So far, we've established that Python code is very slow, but Python standard
 library functions can be fast, though not \emph{as} fast as C. So one would
@@ -436,19 +454,20 @@ exact same function used in my C benchmark. So of \emph{course} Python's
 performance was similar to C's: on some level, it was running exactly the same
 code.
 
+\clearpage
 \section{Conclusion}\label{conclusion}
 
 Before starting this project, I had a vague idea that C was very efficient and
 Python was very slow, with most languages in the middle. In other words, to
 program in a easy-to-use language like Python, you have to pay the price of
 worse performance. My goal in this project was to quantify this cost, with the
-ultimate goal of helping answer the qustion of whether that cost is worth it.
+ultimate goal of helping answer the question of whether that cost is worth it.
 
-To absolutely no one's surprise, the answer is that it depends.
+To absolutely no one's surprise, the answer is that \emph{it depends}.
 
 The performance penalty will depend not only on what language is used, but also
 on \emph{how} that language is used. Python is the most extreme example of
-this. A pure-Python implementation might be very slow. But perhaps an
+this. A pure-Python implementation might be very slow. But what if an
 application is \SI{90}{\%} Python, \SI{10}{\%} C? If the performance-intensive
 part is in C, you can sort of get the best of both worlds: most of your code is
 built in the easy-to-use Python, but code that has to run fast is built in the
@@ -468,6 +487,8 @@ specific, objective results of this project:
     \SI{100}{\kilo B}.
   \item Each Java process introduces a memory overhead of approximately
     \SI{30}{\mega B}.
+  \item The memory overhead of loading a small C program is negligible for
+    most purposes.
   \item The marginal cost of allocating more data in Python is not materially
     different than allocating equivalent data in C.
   \item The marginal cost of allocating more data in Java is difficult to
@@ -493,5 +514,9 @@ However, the specifications of the test machine are listed below, collected
 using Inxi via \texttt{inxi --admin --verbosity=7 --filter}.
 
 \lstinputlisting[]{./specs.inxi}
+
+\section{License}\label{license}
+
+\lstinputlisting{./LICENSE}
 
 \end{document}
