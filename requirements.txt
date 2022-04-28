@@ -1,0 +1,8 @@
+-e .
+pyyaml~=6.0
+tqdm~=4.63
+numpy==1.21
+numba~=0.55
+matplotlib~=3.5.1
+pandas~=1.4.2
+qt5-5.15.6

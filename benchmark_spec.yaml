@@ -1,0 +1,100 @@
+---
+
+write-out:
+  dir: /tmp/benchmark
+  file-name: results
+
+benchmarks:
+  - name: matmul_naïve
+    modes:
+      - TIME
+      - PEAK_MEM
+    sizes:
+      - 100
+      - 200
+      # Small
+      - 400
+    programs:
+      - language: Python
+        args: ['python', './python/matmul.py']
+      - language: C
+        args: ['./c/matmul']
+      - language: Java
+        args: ['./java/app/build/install/app/bin/app', 'matmul_naive']
+  - name: matmul_optimized
+    modes:
+      - TIME
+      - PEAK_MEM
+    sizes:
+      - 100
+      - 200
+      - 400
+      - 800
+      # - 1600
+      # - 3200
+      # - 6400
+    programs:
+      - language: Python
+        args: ['python', './python/matmul_opt.py']
+        env:
+          # See https://www.reddit.com/r/Python/comments/ghzqle/is_numpy_automatically_multithreading/
+          OMP_NUM_THREADS: "1"
+          MPI_NUM_THREADS: "1"
+          MKL_NUM_THREADS: "1"
+          OPENBLAS_NUM_THREADS: "1"
+      - language: C
+        args: ['./c/matmul_opt']
+      - language: Java
+        args: ['./java/app/build/install/app/bin/app', 'matmul_opt']
+  - name: sort_stdlib
+    modes:
+      - PEAK_MEM
+      - TIME
+    sizes:
+      - 100
+      - 200
+      - 400
+      - 800
+      # Small
+      - 1600
+      - 3200
+      - 6400
+      - 12800
+      - 25600
+      - 512000
+      - 1024000
+      - 2000000
+      - 4000000
+      - 16000000
+    programs:
+      - language: Python
+        args: ['python', './python/sort_stdlib.py']
+      - language: C
+        args: ['./c/sort_stdlib']
+      - language: Java
+        args: ['./java/app/build/install/app/bin/app', 'sort_stdlib']
+  - name: heap
+    modes:
+      - TIME
+      - PEAK_MEM
+    sizes:
+      - 100
+      - 200
+      - 400
+      - 800
+      # Small
+      - 1600
+      - 3200
+      # - 6400
+      # - 12800
+      # - 25600
+      # - 51200
+      # - 102400
+      # - 204800
+    programs:
+      - language: Python
+        args: ['python', './python/heap.py']
+      - language: C
+        args: ['./c/heap']
+      - language: Java
+        args: ['./java/app/build/install/app/bin/app', 'heap']

@@ -1,0 +1,139 @@
+operation	language	input_size	time	memory
+matmul_naïve	Python	100		
+matmul_naïve	Python	200		
+matmul_naïve	Python	400		
+matmul_naïve	C	100		
+matmul_naïve	C	200		
+matmul_naïve	C	400		
+matmul_naïve	Java	100		
+matmul_naïve	Java	200		
+matmul_naïve	Java	400		
+matmul_naïve	Python	100		1516976
+matmul_naïve	Python	200		2236880
+matmul_naïve	Python	400		5179184
+matmul_naïve	C	100		244128
+matmul_naïve	C	200		964128
+matmul_naïve	C	400		3844128
+matmul_naïve	Java	100		32943352
+matmul_naïve	Java	200		33245504
+matmul_naïve	Java	400		33246200
+matmul_optimized	Python	100		
+matmul_optimized	Python	200		
+matmul_optimized	Python	400		
+matmul_optimized	C	100		
+matmul_optimized	C	200		
+matmul_optimized	C	400		
+matmul_optimized	Java	100		
+matmul_optimized	Java	200		
+matmul_optimized	Java	400		
+matmul_optimized	Python	100		5280952
+matmul_optimized	Python	200		6000952
+matmul_optimized	Python	400		8880952
+matmul_optimized	C	100		262608
+matmul_optimized	C	200		982608
+matmul_optimized	C	400		3862608
+matmul_optimized	Java	100		77729008
+matmul_optimized	Java	200		33944752
+matmul_optimized	Java	400		65795344
+sort_stdlib	Python	100		1289544
+sort_stdlib	Python	200		1289544
+sort_stdlib	Python	400		1289544
+sort_stdlib	Python	800		1289544
+sort_stdlib	Python	1600		1289544
+sort_stdlib	Python	3200		1289544
+sort_stdlib	Python	6400		1322952
+sort_stdlib	Python	12800		1404968
+sort_stdlib	Python	25600		1570568
+sort_stdlib	Python	512000		7572376
+sort_stdlib	Python	1024000		14017400
+sort_stdlib	C	100		4104
+sort_stdlib	C	200		4104
+sort_stdlib	C	400		6416
+sort_stdlib	C	800		12816
+sort_stdlib	C	1600		25616
+sort_stdlib	C	3200		51216
+sort_stdlib	C	6400		102416
+sort_stdlib	C	12800		204816
+sort_stdlib	C	25600		409616
+sort_stdlib	C	512000		8192016
+sort_stdlib	C	1024000		16392080
+sort_stdlib	Java	100		32881064
+sort_stdlib	Java	200		32842872
+sort_stdlib	Java	400		32932024
+sort_stdlib	Java	800		33013072
+sort_stdlib	Java	1600		33249088
+sort_stdlib	Java	3200		32875704
+sort_stdlib	Java	6400		32913960
+sort_stdlib	Java	12800		33258312
+sort_stdlib	Java	25600		33266824
+sort_stdlib	Java	512000		36379648
+sort_stdlib	Java	1024000		37018904
+sort_stdlib	Python	100		
+sort_stdlib	Python	200		
+sort_stdlib	Python	400		
+sort_stdlib	Python	800		
+sort_stdlib	Python	1600		
+sort_stdlib	Python	3200		
+sort_stdlib	Python	6400		
+sort_stdlib	Python	12800		
+sort_stdlib	Python	25600		
+sort_stdlib	Python	512000		
+sort_stdlib	Python	1024000		
+sort_stdlib	C	100		
+sort_stdlib	C	200		
+sort_stdlib	C	400		
+sort_stdlib	C	800		
+sort_stdlib	C	1600		
+sort_stdlib	C	3200		
+sort_stdlib	C	6400		
+sort_stdlib	C	12800		
+sort_stdlib	C	25600		
+sort_stdlib	C	512000		
+sort_stdlib	C	1024000		
+sort_stdlib	Java	100		
+sort_stdlib	Java	200		
+sort_stdlib	Java	400		
+sort_stdlib	Java	800		
+sort_stdlib	Java	1600		
+sort_stdlib	Java	3200		
+sort_stdlib	Java	6400		
+sort_stdlib	Java	12800		
+sort_stdlib	Java	25600		
+sort_stdlib	Java	512000		
+sort_stdlib	Java	1024000		
+heap	Python	100		
+heap	Python	200		
+heap	Python	400		
+heap	Python	800		
+heap	Python	1600		
+heap	Python	3200		
+heap	C	100		
+heap	C	200		
+heap	C	400		
+heap	C	800		
+heap	C	1600		
+heap	C	3200		
+heap	Java	100		
+heap	Java	200		
+heap	Java	400		
+heap	Java	800		
+heap	Java	1600		
+heap	Java	3200		
+heap	Python	100		1606408
+heap	Python	200		1606408
+heap	Python	400		1606408
+heap	Python	800		1606408
+heap	Python	1600		1606408
+heap	Python	3200		1606408
+heap	C	100		6584
+heap	C	200		9608
+heap	C	400		19208
+heap	C	800		38408
+heap	C	1600		76808
+heap	C	3200		153608
+heap	Java	100		32951960
+heap	Java	200		33238840
+heap	Java	400		33147728
+heap	Java	800		32764760
+heap	Java	1600		32877080
+heap	Java	3200		32769408
